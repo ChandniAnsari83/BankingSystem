@@ -1,8 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
-        static void main() {
-            Scanner sc = new Scanner(System.in);
+    static void main() {
+        BankAccount acc1 = new BankAccount("Chandni Ansari", "2107", 60000);
+
+        Scanner sc = new Scanner(System.in);
+        while (true) {
             System.out.println("========================================");
             System.out.println("              Bank Account");
             System.out.println("========================================");
@@ -13,18 +16,25 @@ public class Main {
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
-            switch (choice){
+            switch (choice) {
                 case 1:
-                    System.out.println("Check Balance Selected");
+                    acc1.displayBalance();
                     break;
                 case 2:
-                    System.out.println("Deposit Money Selected");
+                    System.out.print("Enter amount to deposit: ");
+                    double amount = sc.nextDouble();
+                    acc1.deposit(amount);
+                    System.out.println("Amount deposited successfully!");
                     break;
                 case 3:
-                    System.out.println("Withdraw Money selected");
+                    System.out.print("Enter amount to Withdraw: ");
+                    double amount2 = sc.nextDouble();
+                    acc1.withdraw(amount2);
+                    System.out.println("Withdraw successfully!");
                     break;
                 case 4:
                     System.out.println("Transaction History selected");
+                    acc1.displayTransactions();
                     break;
                 case 5:
                     System.out.println("Thank you for using our ATM!");
@@ -32,15 +42,7 @@ public class Main {
                 default:
                     System.out.println("Invalid!");
             }
-//        BankAccount acc1 = new BankAccount("Chandni Ansari", "2107", 60000);
-//        BankAccount acc2 = new BankAccount("Nandni Gupta", "2110", 50000);
-//        acc1.deposit(40000);
-//        acc1.withdraw(10000);
-//        acc1.displayBalance();
-//
-//        acc2.deposit(10000);
-//        acc2.withdraw(15000);
-//        acc2.displayBalance();
-//        acc1.displayTransactions();
         }
     }
+}
+
