@@ -38,7 +38,7 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Thank you for using our ATM!");
-                    break;
+                   return;
                 default:
                     System.out.println("Invalid!");
             }
